@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/hello', function () {
 });
 
 Route::get('/posts/{id}', function($id) {
-    dd($id);
     return response('Post' . $id);
 })->where('id', '[0-9]+');
+
+Route::get('/search', function(Request $request) {
+    // http://laragigs.test/search?name=some%20name&place=some%20place
+    return($request->name . ' ' .$request->place);
+});
