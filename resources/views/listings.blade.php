@@ -10,7 +10,7 @@
     @foreach ($listings as $listing)
     <x-listing-card :listing="$listing" />
     @endforeach;
-
+    <x-listing-tags :tagsCSV="$listing->tags" />
     @else
     <p>No listings found</p>
     @endunless
