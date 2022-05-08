@@ -10,10 +10,12 @@
         <p class="text-2xl text-gray-200 font-bold my-4">
             Find or post Laravel jobs & projects
         </p>
+        @if (Auth::guest())
         <div>
-            <a href="register.html"
+            <a href="/register"
                 class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black">Sign
                 Up to List a Gig</a>
         </div>
+        @endif
     </div>
 </section>
